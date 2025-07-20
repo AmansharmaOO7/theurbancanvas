@@ -18,5 +18,9 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
   },
-  base: './' // For GitHub Pages compatibility
+  export default defineConfig({
+  // ...
+  base: '/', // or just remove this line entirely
+});
+ // For GitHub Pages compatibility
 })
