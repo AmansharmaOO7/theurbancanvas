@@ -542,10 +542,12 @@ body {
 }
 
 /* Responsive Design */
+/* Fix for mobile navigation - Replace the existing @media (max-width: 1024px) section with this: */
+
 @media (max-width: 1024px) {
     .nav-menu {
         position: fixed;
-        top: 80px;
+        top: 20px;
         left: 0;
         right: 0;
         background: white;
@@ -554,14 +556,30 @@ body {
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         transform: translateY(-100%);
         transition: transform 0.3s ease;
+        z-index: 999; /* Add z-index to keep menu below logo */
     }
     
     .nav-menu.active {
         transform: translateY(0);
     }
     
+    .nav-logo {
+        z-index: 1001; /* Higher than navbar and menu */
+        position: relative; /* Ensure z-index works */
+    }
+    
+    .nav-logo a {
+        font-size: 1.3rem; /* Slightly smaller on mobile */
+    }
+    
+    .nav-container {
+        position: relative;
+        z-index: 1000; /* Base z-index for container */
+    }
+    
     .nav-toggle {
         display: flex;
+        z-index: 1001; /* Same as logo to stay clickable */
     }
     
     .projects-grid,
