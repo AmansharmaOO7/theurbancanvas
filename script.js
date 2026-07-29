@@ -1,3 +1,4 @@
+alert("THIS IS MY SCRIPT");
 // Urban Canvas - Exact Replica JavaScript
 
 // Mobile Navigation
