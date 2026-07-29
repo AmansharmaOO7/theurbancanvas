@@ -62,7 +62,7 @@ function updateActiveNav() {
 function typeWriter() {
     const texts = [
     'MODERN LIVING',
-    'FUTURE SOLUTION',
+    'FUTURE SOLUTIONS',
     'URBAN SPACES',
     'INTERIOR AMBIANCE',
     'CORPORATE AESTHETICS',
