@@ -1,4 +1,3 @@
-alert("THIS IS MY SCRIPT");
 // Urban Canvas - Exact Replica JavaScript
 
 // Mobile Navigation
@@ -62,16 +61,16 @@ function updateActiveNav() {
 // Typing Effect
 function typeWriter() {
     const texts = [
-    'MODERN LIVING',
-    'FUTURE SOLUTIONS',
-    'URBAN SPACES',
-    'INTERIOR AMBIANCE',
-    'CORPORATE AESTHETICS',
-    'INDUSTRIAL CORE',
-    'HEALING ENVIRONMENTS',
-    'SPATIAL RENDERING',
-    'TURN KEY CONSTRUCTION'
-];
+        'MODERN LIVING',
+        'FUTURE SOLUTION',
+        'URBAN SPACES',
+        'INTERIOR AMBIANCE',
+        'CORPORATE AESTHETICS',
+        'INDUSTRIAL CORE',
+        'HEALING ENVIRONMENTS',
+        'SPATIAL RENDERING',
+        'TURN KEY CONSTRUCTION'
+    ];
     const typedElement = document.getElementById('typed-text');
     let textIndex = 0;
     let charIndex = 0;
