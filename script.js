@@ -60,7 +60,17 @@ function updateActiveNav() {
 
 // Typing Effect
 function typeWriter() {
-    const texts = ['URBAN SPACES', 'MODERN LIVING', 'FUTURE SOLUTIONS'];
+    const texts = [
+    'MODERN LIVING',
+    'FUTURE SOLUTION',
+    'URBAN SPACES',
+    'INTERIOR AMBIANCE',
+    'CORPORATE AESTHETICS',
+    'INDUSTRIAL CORE',
+    'HEALING ENVIRONMENTS',
+    'SPATIAL RENDERING',
+    'TURN KEY CONSTRUCTION'
+];
     const typedElement = document.getElementById('typed-text');
     let textIndex = 0;
     let charIndex = 0;
