@@ -74,38 +74,8 @@
         <section id="projects" class="section">
             <div class="container">
                 <h2>FEATURED PROJECTS</h2>
-                <div class="projects-grid">
-                    <div class="project-card" onclick="window.location.href='projects/villa-one.html'">
-    <div class="project-image" style="background-image: url('projects/villa-one-cover.jpg')"></div>
-    <div class="project-overlay">
-        <h3>VILLA ONE</h3>
-        <span class="arrow">→</span>
-    </div>
-</div>
-
-<div class="project-card" onclick="window.location.href='projects/uppan-auditorium.html'">
-    <div class="project-image" style="background-image: url('projects/uppan-auditorium-cover.jpg')"></div>
-    <div class="project-overlay">
-        <h3>UPPAN AUDITORIUM</h3>
-        <span class="arrow">→</span>
-    </div>
-</div>
-
-<div class="project-card" onclick="window.location.href='projects/hmel-park.html'">
-    <div class="project-image" style="background-image: url('projects/hmel-park-cover.jpg')"></div>
-    <div class="project-overlay">
-        <h3>HMEL PARK</h3>
-        <span class="arrow">→</span>
-    </div>
-</div>
-
-<div class="project-card" onclick="window.location.href='projects/rk-gupta-residence.html'">
-    <div class="project-image" style="background-image: url('projects/rk-gupta-residence-cover.jpg')"></div>
-    <div class="project-overlay">
-        <h3>RK GUPTA RESIDENCE</h3>
-        <span class="arrow">→</span>
-    </div>
-</div>
+                <div class="projects-grid" id="home-featured-projects-grid">
+                    <!-- Generated from project-data.js -->
                 </div>
             </div>
         </section>
@@ -331,119 +301,11 @@ A curated collection of our signature architectural, interior and planning proje
 
 </p>
 
-<div class="portfolio-grid-new">
+<div class="portfolio-grid-new" id="home-featured-portfolio-grid">
+                    <!-- Generated from project-data.js -->
+                </div>
 
-<div class="portfolio-card">
-
-<img src="projects/ars-textile-factory-cover.jpg" alt="ARS Textile Factory">
-
-<div class="portfolio-overlay">
-
-<h3>ARS Textile Factory</h3>
-
-<p>Industrial Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/ars-textile-factory.html"></a>
-
-</div>
-
-<div class="portfolio-card">
-
-<img src="projects/hmel-park-cover.jpg" alt="HMEL Park">
-
-<div class="portfolio-overlay">
-
-<h3>HMEL Park</h3>
-
-<p>Landscape Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/hmel-park.html"></a>
-
-</div>
-
-<div class="portfolio-card">
-
-<img src="projects/mangalkamna-hospital-cover.jpg" alt="Mangal Kamna Hospital">
-
-<div class="portfolio-overlay">
-
-<h3>Mangal Kamna Hospital</h3>
-
-<p>Healthcare Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/mangalkamna-hospital.html"></a>
-
-</div>
-
-<div class="portfolio-card">
-
-<img src="projects/metro-metro-factory-cover.jpg" alt="Metro & Metro Factory">
-
-<div class="portfolio-overlay">
-
-<h3>Metro & Metro Factory</h3>
-
-<p>Industrial Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/metro-metro-factory.html"></a>
-
-</div>
-
-<div class="portfolio-card">
-
-<img src="projects/rk-gupta-residence-cover.jpg" alt="RK Gupta Residence">
-
-<div class="portfolio-overlay">
-
-<h3>RK Gupta Residence</h3>
-
-<p>Residential Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/rk-gupta-residence.html"></a>
-
-</div>
-
-<div class="portfolio-card">
-
-<img src="projects/aak-office-cover.jpg" alt="AAK Office">
-
-<div class="portfolio-overlay">
-
-<h3>AAK Office</h3>
-
-<p>Office Architecture</p>
-
-<span>View Project →</span>
-
-</div>
-
-<a href="projects/aak-office.html"></a>
-
-</div>
-
-</div>
-
-<div class="portfolio-button">
+                <div class="portfolio-button">
 
 <a href="portfolio.html">
 
@@ -623,5 +485,46 @@ placeholder="Tell us about your project..."></textarea>
     </footer>
     
     <script src="script.js"></script>
+
+    <script src="project-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof PROJECTS === "undefined") return;
+
+            const sortedProjects = [...PROJECTS].sort((a, b) => a.order - b.order);
+
+            const homeFeatured = sortedProjects.filter(project => project.homeFeatured);
+            const portfolioFeatured = sortedProjects.filter(project => project.portfolioFeatured);
+
+            const projectsGrid = document.getElementById("home-featured-projects-grid");
+            if (projectsGrid) {
+                projectsGrid.innerHTML = homeFeatured.map(project => `
+                    <div class="project-card" onclick="window.location.href='${project.page}'">
+                        <div class="project-image" style="background-image: url('${project.cover}')"></div>
+                        <div class="project-overlay">
+                            <h3>${project.title.toUpperCase()}</h3>
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                `).join("");
+            }
+
+            const portfolioGrid = document.getElementById("home-featured-portfolio-grid");
+            if (portfolioGrid) {
+                portfolioGrid.innerHTML = portfolioFeatured.map(project => `
+                    <div class="portfolio-card">
+                        <img src="${project.cover}" alt="${project.name}">
+                        <div class="portfolio-overlay">
+                            <h3>${project.title}</h3>
+                            <p>${project.portfolioCategory}</p>
+                            <span>View Project →</span>
+                        </div>
+                        <a href="${project.page}"></a>
+                    </div>
+                `).join("");
+            }
+        });
+    </script>
+
 </body>
 </html>
