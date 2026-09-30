@@ -1,5 +1,18 @@
 const PROJECTS = [
     {
+        id: "ars-factory-front-lawn",
+        name: "ARS Factory Front Lawn",
+        title: "ARS Factory Front Lawn",
+        category: "Industrial Landscape",
+        portfolioCategory: "Landscape Architecture",
+        cover: "projects/ars-factory-front-lawn/render-1.jpg",
+        page: "projects/ars-factory-front-lawn/ars-factory-front-lawn.html",
+        homeFeatured: true,
+        portfolioFeatured: true,
+        order: 0
+    },
+
+    {
         id: "singhal-residence",
         name: "Singhal Residence",
         title: "Singhal Residence",
@@ -9,7 +22,7 @@ const PROJECTS = [
         page: "projects/singhal-residence/singhal-residence.html",
         homeFeatured: false,
         portfolioFeatured: true,
-        order: 0
+        order: 1
     },
 
     {
@@ -22,7 +35,7 @@ const PROJECTS = [
         page: "projects/shiksha-sadan.html",
         homeFeatured: false,
         portfolioFeatured: true,
-        order: 1
+        order: 2
     },
 
     {
@@ -35,7 +48,7 @@ const PROJECTS = [
         page: "projects/aak-office.html",
         homeFeatured: false,
         portfolioFeatured: false,
-        order: 2
+        order: 3
     },
 
     {
@@ -48,7 +61,7 @@ const PROJECTS = [
         page: "projects/ars-textile-factory.html",
         homeFeatured: false,
         portfolioFeatured: true,
-        order: 3
+        order: 4
     },
 
     {
@@ -61,7 +74,7 @@ const PROJECTS = [
         page: "projects/hmel-park.html",
         homeFeatured: true,
         portfolioFeatured: true,
-        order: 4
+        order: 5
     },
 
     {
@@ -74,7 +87,7 @@ const PROJECTS = [
         page: "projects/mangalkamna-hospital.html",
         homeFeatured: false,
         portfolioFeatured: true,
-        order: 5
+        order: 6
     },
 
     {
@@ -86,8 +99,8 @@ const PROJECTS = [
         cover: "projects/metro-metro-factory-cover.jpg",
         page: "projects/metro-metro-factory.html",
         homeFeatured: false,
-        portfolioFeatured: true,
-        order: 6
+        portfolioFeatured: false,
+        order: 7
     },
 
     {
@@ -98,9 +111,9 @@ const PROJECTS = [
         portfolioCategory: "Residential Architecture",
         cover: "projects/rk-gupta-residence-cover.jpg",
         page: "projects/rk-gupta-residence.html",
-        homeFeatured: true,
+        homeFeatured: false,
         portfolioFeatured: false,
-        order: 7
+        order: 8
     },
 
     {
@@ -113,7 +126,7 @@ const PROJECTS = [
         page: "projects/uppan-auditorium.html",
         homeFeatured: true,
         portfolioFeatured: false,
-        order: 8
+        order: 9
     },
 
     {
@@ -126,6 +139,6 @@ const PROJECTS = [
         page: "projects/villa-one.html",
         homeFeatured: true,
         portfolioFeatured: false,
-        order: 9
+        order: 10
     }
 ];
